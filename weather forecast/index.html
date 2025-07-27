@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="app">
+    <button id="toggleTheme">🌙 Toggle Dark Mode</button>
+
+    <div class="weather-container">
+      <h1>🌦️ Weather Forecast</h1>
+
+      <div class="buttons">
+        <button onclick="getWeatherByLocation()">Use My Location</button>
+        <input type="text" id="cityInput" placeholder="Enter city...">
+        <button onclick="getWeather()">Get Weather</button>
+        <button onclick="repeatForecast()">🔊 Speak Again</button>
+      </div>
+
+      <div id="loader" class="loader" style="display: none;"></div>
+
+      <div id="weatherInfo" class="card" style="display: none;">
+        <div id="famousPlaces" class="card" style="display: block;"></div>
+
+        <h2 id="location"></h2>
+        <p><strong>Temperature:</strong> <span id="temperature"></span> °C</p>
+        <p><strong>Weather:</strong> <span id="description"></span> <span id="weatherIcon"></span></p>
+        <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+        <p><strong>Wind:</strong> <span id="wind"></span> m/s</p>
+        <p><strong>Local Time:</strong> <span id="localTime"></span></p>
+        <p><strong>Suggestion:</strong> <span id="clothingAdvice"></span></p>
+        <p><strong>👶 Kids Advice:</strong> <span id="kidsAdvice"></span></p>
+        <p><strong>🌐 Language:</strong>
+          <select id="languageSelect" onchange="translateAdvice()">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+          </select>
+        </p>
+      </div>
+
+      <div id="forecast" class="forecast-container" style="display: none;"></div>
+      
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
